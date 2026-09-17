@@ -5,6 +5,8 @@ import { useDisasterData } from "@/hooks/useDisasterData";
 import { useGeolocation } from "@/lib/geo/useGeolocation";
 import { useAlertRadiusKm } from "@/lib/geo/useAlertRadiusKm";
 import { findWithinRadius } from "@/lib/geo/proximity";
+import { removeLocalStorageItem } from "@/lib/storage/useLocalStorage";
+import { DANGER_POPUP_DISMISSED_KEY } from "@/components/home/DangerPopup";
 
 export function ProximityAlertBanner() {
   const { earthquakes, hotspots, earthquakesLoading, hotspotsLoading } = useDisasterData();
@@ -31,7 +33,11 @@ export function ProximityAlertBanner() {
   }
 
   return (
-    <div className="mx-4 flex flex-col gap-1 rounded-lg border border-destructive/30 bg-destructive/10 px-3 py-2 text-xs text-destructive">
+    <button
+      type="button"
+      onClick={() => removeLocalStorageItem(DANGER_POPUP_DISMISSED_KEY)}
+      className="mx-4 flex flex-col gap-1 rounded-lg border border-destructive/30 bg-destructive/10 px-3 py-2 text-left text-xs text-destructive"
+    >
       <div className="flex items-center gap-2 font-semibold">
         <AlertTriangle className="size-4 shrink-0" />
         Peringatan: {totalNearby} kejadian dalam radius {radiusKm} km
@@ -47,6 +53,7 @@ export function ProximityAlertBanner() {
           {nearbyHotspots.length} titik kebakaran terdekat: {nearbyHotspots[0].distanceKm.toFixed(1)} km
         </span>
       )}
-    </div>
+      <span className="mt-0.5 text-[11px] font-medium underline underline-offset-2">Tampilkan detail peringatan</span>
+    </button>
   );
 }

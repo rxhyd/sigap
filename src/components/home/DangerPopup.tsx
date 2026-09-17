@@ -9,7 +9,7 @@ import { useAlertRadiusKm } from "@/lib/geo/useAlertRadiusKm";
 import { findWithinRadius } from "@/lib/geo/proximity";
 import { useLocalStorageRaw, setLocalStorageItem } from "@/lib/storage/useLocalStorage";
 
-const DISMISSED_KEY = "sigap:danger-popup:dismissed-location";
+export const DANGER_POPUP_DISMISSED_KEY = "sigap:danger-popup:dismissed-location";
 
 function locationKey(lat: number, lon: number): string {
   // ~1.1km grid — small GPS jitter at the same spot won't retrigger the popup,
@@ -21,7 +21,7 @@ export function DangerPopup() {
   const { earthquakes, hotspots, earthquakesLoading, hotspotsLoading } = useDisasterData();
   const { state: geoState, coords, isFallback } = useGeolocation();
   const radiusKm = useAlertRadiusKm();
-  const dismissedKey = useLocalStorageRaw(DISMISSED_KEY);
+  const dismissedKey = useLocalStorageRaw(DANGER_POPUP_DISMISSED_KEY);
 
   const dataReady = geoState.status === "granted" && !isFallback && !earthquakesLoading && !hotspotsLoading;
   const hotspotList = hotspots.status === "ok" ? hotspots.data : [];
@@ -36,7 +36,7 @@ export function DangerPopup() {
   const open = dataReady && hasDanger && !alreadyDismissedHere;
 
   function handleClose() {
-    if (currentKey) setLocalStorageItem(DISMISSED_KEY, currentKey);
+    if (currentKey) setLocalStorageItem(DANGER_POPUP_DISMISSED_KEY, currentKey);
   }
 
   const nearestEarthquake = nearbyEarthquakes[0];
