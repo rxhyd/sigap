@@ -22,7 +22,7 @@ export function DisasterMap() {
           <h2 className="text-sm font-semibold">Peta Bencana</h2>
         </div>
 
-        <div className="isolate overflow-hidden rounded-lg">
+        <div className="isolate overflow-hidden rounded-lg animate-in fade-in duration-500">
           <DisasterMapView />
         </div>
 

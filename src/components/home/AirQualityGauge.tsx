@@ -66,7 +66,7 @@ export function AirQualityGauge() {
 function AirQualityBar({ reading }: { reading: AirQualityReading }) {
   const meta = LEVEL_META[reading.level];
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 animate-in fade-in duration-500">
       <div className="flex h-2.5 w-full overflow-hidden rounded-full">
         {LEVEL_ORDER.map((level) => (
           <div

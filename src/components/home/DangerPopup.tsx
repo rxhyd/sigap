@@ -46,8 +46,9 @@ export function DangerPopup() {
     <Dialog open={open} onOpenChange={(next) => !next && handleClose()}>
       <DialogContent showCloseButton={false} className="overflow-hidden border-destructive/30 p-0">
         <div className="flex flex-col items-center gap-2 bg-gradient-to-b from-destructive/15 via-destructive/5 to-transparent px-4 pt-6 pb-4 text-center">
-          <span className="flex size-14 items-center justify-center rounded-full bg-destructive/15 text-destructive">
-            <ShieldAlert className="size-7" />
+          <span className="relative flex size-14 items-center justify-center rounded-full bg-destructive/15 text-destructive">
+            <span className="absolute inline-flex size-full animate-ping rounded-full bg-destructive/20" />
+            <ShieldAlert className="relative size-7" />
           </span>
           <span className="text-lg font-extrabold tracking-tight text-destructive">PERINGATAN BAHAYA</span>
           <span className="text-xs text-muted-foreground">

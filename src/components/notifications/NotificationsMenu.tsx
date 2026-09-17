@@ -55,7 +55,10 @@ export function NotificationsMenu() {
       >
         <Bell className="size-4.5" />
         {unreadCount > 0 && (
-          <span className="absolute right-1.5 top-1.5 flex size-2 rounded-full bg-destructive ring-2 ring-background" />
+          <span className="absolute right-1.5 top-1.5 flex size-2">
+            <span className="absolute inline-flex size-full animate-ping rounded-full bg-destructive/75" />
+            <span className="relative inline-flex size-2 rounded-full bg-destructive ring-2 ring-background" />
+          </span>
         )}
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-80">

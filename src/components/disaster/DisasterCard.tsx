@@ -6,7 +6,7 @@ import type { DisasterItem } from "@/lib/disaster/disasterItem";
 
 export function DisasterCard({ item }: { item: DisasterItem }) {
   return (
-    <Card>
+    <Card className="animate-in fade-in slide-in-from-bottom-1 duration-300">
       <CardContent className="flex gap-3">
         <MapThumbnail latitude={item.latitude} longitude={item.longitude} dotColor={item.severityColor} />
         <div className="flex min-w-0 flex-1 flex-col gap-1">

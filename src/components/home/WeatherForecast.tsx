@@ -53,7 +53,7 @@ function WeatherContent({ data }: { data: WeatherForecastData }) {
   const CurrentIcon = current.icon;
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 animate-in fade-in duration-500">
       <div className="flex items-center gap-4">
         <CurrentIcon className="size-10 text-primary" strokeWidth={1.5} />
         <div className="flex flex-col">

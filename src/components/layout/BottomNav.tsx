@@ -33,9 +33,14 @@ export function BottomNav() {
                   isActive ? "bg-primary/10 text-primary" : "text-muted-foreground hover:text-foreground"
                 )}
               >
-                <Icon className="size-4.5" strokeWidth={isActive ? 2.5 : 2} />
+                <Icon
+                  className={cn("size-4.5 transition-transform duration-200", isActive && "scale-110")}
+                  strokeWidth={isActive ? 2.5 : 2}
+                />
               </span>
-              <span className={isActive ? "text-primary" : "text-muted-foreground"}>{label}</span>
+              <span className={cn("transition-colors duration-200", isActive ? "text-primary" : "text-muted-foreground")}>
+                {label}
+              </span>
             </Link>
           );
         })}

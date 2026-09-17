@@ -53,7 +53,7 @@ export function EmergencyCallButton() {
           <Button
             onClick={() => setOpen(true)}
             size="icon"
-            className="pointer-events-auto size-14 rounded-full bg-destructive text-destructive-foreground shadow-lg shadow-destructive/40 hover:bg-destructive/90"
+            className="pointer-events-auto size-14 rounded-full bg-destructive text-destructive-foreground shadow-lg shadow-destructive/40 transition-transform duration-200 hover:scale-105 hover:bg-destructive/90 active:scale-95"
             aria-label="Panggilan darurat"
           >
             <Phone className="size-6" />
