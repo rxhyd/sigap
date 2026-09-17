@@ -14,4 +14,5 @@ export type CommunityThread = {
   postedAt: string; // ISO
   viewCount: number;
   comments: CommunityComment[];
+  isOwn?: boolean;
 };
