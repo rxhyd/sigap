@@ -130,3 +130,30 @@
     @apply font-sans;
   }
 }
+
+/* Directional "swipe" reveal when toggling light/dark mode, instead of a
+   circular ripple — the new theme sweeps in across the screen like a
+   curtain rather than crossfading or expanding out from a circle. */
+::view-transition-old(root) {
+  animation: none;
+}
+
+::view-transition-new(root) {
+  animation: theme-swipe-in 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@keyframes theme-swipe-in {
+  from {
+    clip-path: inset(0 0 0 100%);
+  }
+  to {
+    clip-path: inset(0 0 0 0%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none !important;
+  }
+}
