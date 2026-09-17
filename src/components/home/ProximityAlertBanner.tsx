@@ -36,7 +36,7 @@ export function ProximityAlertBanner() {
     <button
       type="button"
       onClick={() => removeLocalStorageItem(DANGER_POPUP_DISMISSED_KEY)}
-      className="mx-4 flex flex-col gap-1 rounded-lg border border-destructive/30 bg-destructive/10 px-3 py-2 text-left text-xs text-destructive"
+      className="mx-4 flex w-[calc(100%-2rem)] flex-col gap-1 rounded-lg border border-destructive/30 bg-destructive/10 px-3 py-2 text-left text-xs text-destructive"
     >
       <div className="flex items-center gap-2 font-semibold">
         <AlertTriangle className="size-4 shrink-0" />
