@@ -133,7 +133,16 @@
 
 /* Circular reveal when toggling light/dark mode: the new theme expands as
    a circle from the toggle button's position until it covers the screen. */
-::view-transition-old(root) {
+::view-transition-group(root) {
+  animation-duration: 0.6s;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  /* Browsers apply plus-lighter blending by default to crossfade the two
+     snapshots, which flashes/washes out colors during a clip-path reveal
+     instead of a fade — normal blending avoids that flicker. */
+  mix-blend-mode: normal;
   animation: none;
 }
 
