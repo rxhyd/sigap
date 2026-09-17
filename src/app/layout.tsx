@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { cookies } from "next/headers";
 import { Geist, Geist_Mono } from "next/font/google";
 import { MobileShell } from "@/components/layout/MobileShell";
@@ -22,6 +22,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "SIGAP — Sistem Informasi Gempa, Asap & Pemadaman",
   description: "Deteksi dini kebakaran hutan, gempa bumi, dan kualitas udara di sekitar Anda.",
+};
+
+// Tells browsers this page manages its own light/dark appearance, so mobile
+// browsers with an "auto dark mode for web content" feature don't try to
+// re-invert colors on top of our own theme and break text contrast.
+export const viewport: Viewport = {
+  colorScheme: "light dark",
 };
 
 export default async function RootLayout({ children }: LayoutProps<"/">) {
