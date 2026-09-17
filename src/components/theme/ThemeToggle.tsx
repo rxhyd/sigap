@@ -10,7 +10,7 @@ export function ThemeToggle() {
   const { setTheme, resolvedTheme } = useTheme();
   const mounted = useHasMounted();
 
-  function toggleTheme() {
+  function toggleTheme(event: React.MouseEvent<HTMLButtonElement>) {
     const next = resolvedTheme === "dark" ? "light" : "dark";
 
     const canAnimate =
@@ -21,6 +21,17 @@ export function ThemeToggle() {
       setTheme(next);
       return;
     }
+
+    const { clientX: x, clientY: y } = event;
+    const endRadius = Math.hypot(
+      Math.max(x, window.innerWidth - x),
+      Math.max(y, window.innerHeight - y)
+    );
+
+    const root = document.documentElement;
+    root.style.setProperty("--theme-toggle-x", `${x}px`);
+    root.style.setProperty("--theme-toggle-y", `${y}px`);
+    root.style.setProperty("--theme-toggle-radius", `${endRadius}px`);
 
     document.startViewTransition(() => {
       flushSync(() => setTheme(next));
