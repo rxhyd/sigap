@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ShieldAlert, Flame, Activity, Wind, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 
 const FEATURES = [
   {
@@ -22,7 +23,10 @@ const FEATURES = [
 
 export function LandingPage() {
   return (
-    <div className="flex min-h-screen flex-col justify-between bg-gradient-to-b from-orange-50 via-background to-background px-6 pt-14 pb-8 dark:from-orange-950/20">
+    <div className="relative flex min-h-screen flex-col justify-between bg-gradient-to-b from-orange-50 via-background to-background px-6 pt-14 pb-8 dark:from-orange-950/20">
+      <div className="absolute right-4 top-4">
+        <ThemeToggle />
+      </div>
       <div className="flex flex-col items-center gap-6 text-center">
         <div className="flex size-20 items-center justify-center rounded-3xl bg-gradient-to-br from-primary to-orange-700 shadow-lg shadow-primary/30">
           <ShieldAlert className="size-10 text-white" />

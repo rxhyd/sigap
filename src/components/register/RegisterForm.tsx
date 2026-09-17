@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { PROFILE_STORAGE_KEY, type StoredProfile } from "@/components/profil/ProfileFormStatic";
 import { markRegisteredCookie } from "@/lib/auth/registration";
 import { setLocalStorageItem } from "@/lib/storage/useLocalStorage";
@@ -67,10 +68,13 @@ export function RegisterForm() {
 
   return (
     <div className="flex min-h-screen flex-col gap-6 px-5 pt-6 pb-10">
-      <Link href="/" className="flex w-fit items-center gap-1 text-sm text-muted-foreground hover:text-foreground">
-        <ArrowLeft className="size-4" />
-        Kembali
-      </Link>
+      <div className="flex items-center justify-between">
+        <Link href="/" className="flex w-fit items-center gap-1 text-sm text-muted-foreground hover:text-foreground">
+          <ArrowLeft className="size-4" />
+          Kembali
+        </Link>
+        <ThemeToggle />
+      </div>
 
       <div className="flex flex-col gap-1">
         <h1 className="text-2xl font-bold tracking-tight">Buat Profil</h1>
