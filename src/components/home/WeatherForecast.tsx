@@ -85,6 +85,7 @@ function WeatherContent({ data }: { data: WeatherForecastData }) {
                   </span>
                   <HourIcon className="size-4 text-primary" />
                   <span className="text-[11px] font-semibold">{Math.round(hour.tempC)}°</span>
+                  <RainChance pct={hour.rainChancePct} />
                 </div>
               );
             })}
@@ -106,11 +107,31 @@ function WeatherContent({ data }: { data: WeatherForecastData }) {
                 <DayIcon className="size-4 text-primary" />
                 <span className="text-[11px] font-semibold">{Math.round(day.tempMaxC)}°</span>
                 <span className="text-[10px] text-muted-foreground">{Math.round(day.tempMinC)}°</span>
+                <RainChance pct={day.rainChancePct} />
               </div>
             );
           })}
         </div>
       </div>
+
+      <p className="text-[11px] leading-snug text-muted-foreground">
+        Rata-rata 5 model cuaca global (Open-Meteo), bisa meleset ±2–3°C dan waktu hujan sering geser. Untuk
+        peringatan resmi, cek{" "}
+        <a href="https://www.bmkg.go.id/" target="_blank" rel="noreferrer" className="underline underline-offset-2">
+          BMKG
+        </a>
+        .
+      </p>
     </div>
+  );
+}
+
+function RainChance({ pct }: { pct: number }) {
+  if (pct <= 0) return null;
+  return (
+    <span className="flex items-center gap-0.5 text-[10px] font-medium text-sky-600 dark:text-sky-400">
+      <Droplets className="size-2.5" />
+      {pct}%
+    </span>
   );
 }
