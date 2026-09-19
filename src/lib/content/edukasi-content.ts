@@ -5,6 +5,24 @@ export const edukasiCategories: EdukasiCategory[] = [
     slug: "kebakaran-hutan",
     title: "Kebakaran Hutan & Lahan",
     icon: "flame",
+    mnemonic: {
+      acronym: "ASAP",
+      steps: [
+        { letter: "A", title: "Amati", detail: "Pantau kualitas udara & peringatan." },
+        {
+          letter: "S",
+          title: "Selamatkan",
+          detail: "Lindungi anak, lansia, ibu hamil & penderita penyakit kronis.",
+        },
+        { letter: "A", title: "Atasi", detail: "Kurangi aktivitas di luar & hindari paparan asap." },
+        {
+          letter: "P",
+          title: "Periksa",
+          detail: "Kenali tanda bahaya dan segera ke fasilitas kesehatan bila sesak/nyeri dada.",
+        },
+      ],
+      reminder: "Tidak terlihat ≠ tidak berbahaya.",
+    },
     subtopics: [
       {
         slug: "prevalensi",
@@ -57,6 +75,19 @@ export const edukasiCategories: EdukasiCategory[] = [
     slug: "gempa-bumi",
     title: "Gempa Bumi",
     icon: "activity",
+    mnemonic: {
+      acronym: "LINDUNG",
+      steps: [
+        { letter: "L", title: "Lindungi kepala" },
+        { letter: "I", title: "Ikuti prinsip Drop–Cover–Hold On" },
+        { letter: "N", title: "Jangan panik" },
+        { letter: "D", title: "Dahulukan keselamatan" },
+        { letter: "U", title: "Usai gempa, evakuasi ke tempat aman" },
+        { letter: "N", title: "Naik? Jangan gunakan lift" },
+        { letter: "G", title: "Gunakan jalur evakuasi" },
+      ],
+      reminder: "Merunduk – Berlindung – Berpegangan.",
+    },
     subtopics: [
       {
         slug: "prevalensi",
@@ -97,11 +128,20 @@ export const edukasiCategories: EdukasiCategory[] = [
         slug: "upaya-penanggulangan",
         title: "Upaya Penanggulangan",
         content: [
+          "Upaya mandiri saat gempa terjadi: Drop – Cover – Hold On (Merunduk – Berlindung – Berpegangan), seperti pada gambar di bawah. Merunduk ke lantai, berlindung di bawah meja yang kokoh, lalu berpegangan pada kakinya sampai guncangan berhenti.",
           "Sistem peringatan dini tsunami (InaTEWS) oleh BMKG untuk gempa berpotensi tsunami.",
           "Penerapan standar bangunan tahan gempa dan retrofitting bangunan lama di zona rawan gempa.",
           "Simulasi dan edukasi kesiapsiagaan bencana (drill evakuasi) di sekolah dan komunitas.",
           "Rencana kontinjensi dan jalur evakuasi yang jelas di wilayah pesisir rawan tsunami.",
         ],
+        image: {
+          src: "https://www.gharpedia.com/cf-img/uploads/2016/05/Drop-Cover-Hold-Method-03-0207030006-1.jpg",
+          alt: "Ilustrasi tiga langkah saat gempa: Drop (merunduk), Cover (berlindung di bawah meja), Hold On (berpegangan pada kaki meja)",
+          width: 2000,
+          height: 1080,
+          caption: "Drop – Cover – Hold On: tiga langkah melindungi diri saat gempa berlangsung.",
+          credit: "Gharpedia",
+        },
       },
     ],
   },
@@ -109,6 +149,16 @@ export const edukasiCategories: EdukasiCategory[] = [
     slug: "tsunami",
     title: "Tsunami",
     icon: "waves",
+    mnemonic: {
+      acronym: "JAUH",
+      steps: [
+        { letter: "J", title: "Jauhi pantai setelah gempa kuat/lama." },
+        { letter: "A", title: "Arahkan diri ke tempat tinggi atau titik evakuasi." },
+        { letter: "U", title: "Utamakan kelompok rentan." },
+        { letter: "H", title: "Hentikan keinginan melihat air laut." },
+      ],
+      reminder: "Gempa kuat/lama → segera evakuasi.",
+    },
     subtopics: [
       {
         slug: "prevalensi",
@@ -162,6 +212,18 @@ export const edukasiCategories: EdukasiCategory[] = [
     slug: "longsor",
     title: "Tanah Longsor",
     icon: "mountain",
+    mnemonic: {
+      acronym: "WASPADA",
+      steps: [
+        { letter: "W", title: "Waspadai hujan deras & lereng." },
+        { letter: "A", title: "Amati retakan tanah atau bangunan." },
+        { letter: "S", title: "Segera menjauh dari lereng bila ada tanda bahaya." },
+        { letter: "P", title: "Pindah ke tempat aman." },
+        { letter: "A", title: "Arahkan kelompok rentan untuk evakuasi." },
+        { letter: "D", title: "Jangan kembali sebelum dinyatakan aman." },
+        { letter: "A", title: "Awasi kemungkinan longsor susulan." },
+      ],
+    },
     subtopics: [
       {
         slug: "prevalensi",

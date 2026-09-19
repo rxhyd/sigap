@@ -33,7 +33,7 @@ export function LandingPage() {
         </div>
         <div className="flex flex-col gap-2">
           <h1 className="text-3xl font-extrabold tracking-tight">SIGAP</h1>
-          <p className="text-sm text-muted-foreground">Sistem Informasi Gempa, Asap &amp; Pemadaman</p>
+          <p className="text-sm text-muted-foreground">Sistem Informasi Gempa, Asap &amp; Peringatan</p>
           <p className="mx-auto max-w-xs text-base font-medium text-foreground/80">
             Deteksi dini kebakaran hutan &amp; gempa bumi di sekitar Anda, sebelum semuanya terlambat.
           </p>

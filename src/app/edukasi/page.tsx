@@ -8,7 +8,7 @@ export default function EdukasiPage() {
       <GradientPageHeader
         icon={BookOpen}
         title="Edukasi Bencana"
-        subtitle="Kenali prevalensi, penyebab, faktor risiko, dampak, dan upaya penanggulangan."
+        subtitle="Hafalkan singkatan tindakan cepat, lalu pelajari penyebab, dampak, dan upaya penanggulangannya."
       />
       <div className="px-4">
         <EdukasiAccordion />

@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SIGAP — Sistem Informasi Gempa, Asap & Pemadaman",
+  title: "SIGAP — Sistem Informasi Gempa, Asap & Peringatan",
   description: "Deteksi dini kebakaran hutan, gempa bumi, dan kualitas udara di sekitar Anda.",
 };
 
